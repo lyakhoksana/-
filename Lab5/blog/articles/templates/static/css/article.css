@@ -1,0 +1,209 @@
+/* Общие стили */
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Шапка */
+.header {
+    background: #16a085;
+    padding: 20px;
+    text-align: center;
+}
+
+.header img.logo {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/* Контент статьи */
+.article-content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-content h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Информация об авторе и дате */
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+/* Текст статьи */
+.article-text {
+    line-height: 1.8;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* Ссылка "Все записи" */
+.article .back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для списка статей (из лабы 3) */
+.archive .archive {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.archive .one-post {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.archive .post-title a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.archive .post-title a:hover {
+    text-decoration: underline;
+}
+
+.archive .fold-button {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.archive .fold-button:hover {
+    color: #ccc;
+}
+
+/* === Лаба 5: Форма создания поста === */
+.auth-content {
+    width: 600px;              /* Шире, чем форма входа */
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    box-sizing: border-box;    /* Чтобы padding не увеличивал ширину */
+}
+
+.auth-content h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Georgia, serif;
+}
+
+.auth-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;                 /* Больше отступы между полями */
+}
+
+.auth-content input[type="text"],
+.auth-content textarea {
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Tahoma, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    width: 100%;               /* Поля на всю ширину контейнера */
+}
+
+.auth-content input[type="text"]:focus,
+.auth-content textarea:focus {
+    outline: none;
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+}
+
+.auth-content textarea {
+    min-height: 200px;
+    resize: vertical;          /* Можно менять высоту, но не ширину */
+}
+
+.auth-content input[type="submit"] {
+    padding: 14px;
+    background: #16a085;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.auth-content input[type="submit"]:hover {
+    background: #1abc9c;
+}
+
+.auth-content input[type="submit"]:active {
+    transform: scale(0.98);    /* Эффект нажатия */
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.auth-link a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 4px;Ы
+    border-left: 3px solid #e74c3c;
+}
+

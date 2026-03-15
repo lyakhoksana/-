@@ -1,0 +1,413 @@
+/* ============================================
+   GLOBAL SETTINGS — НАСТРОЙКИ ДЛЯ БЫСТРОГО ИЗМЕНЕНИЯ
+   ============================================ */
+:root {
+    /* 🔹 Цвета */
+    --color-bg-body: #af2e2e;
+    --color-bg-header: #113d11;
+    --color-bg-content: #680a0a;
+    --color-text: #fff;
+    --color-text-muted: #ecf0f1;
+    --color-error: #e74c3c;
+    --color-accent: #4a0986;
+
+    /* 🔹 Размеры шапки */
+    --header-padding: 30px 20px;
+    --header-min-height: 10px;
+    --logo-width: 318px;
+    --logo-margin-bottom: 20px;
+
+    /* 🔹 Текстовая область шапки */
+    --text-area-width: 400px;
+    --text-area-margin-top: 20px;
+    --title-font-size: 20px;
+    --link-font-size: 14px;
+    --link-padding: 10px 20px;
+
+    /* 🔹 Иконки параллакса */
+    --icons-container-width: 200px;
+    --icons-container-height: 300px;
+    --icons-container-margin: 20px 0 20px 0;
+
+    --icon1-width: 50px;
+    --icon1-top: 0px;
+    --icon1-zindex: 3;
+
+    --icon2-width: 50px;
+    --icon2-top: 0px;
+    --icon2-left: 80px;
+    --icon2-zindex: 2;
+
+    --icon3-width: 50px;
+    --icon3-left: 160px;
+    --icon3-zindex: 1;
+
+    /* 🔹 Контент */
+    --content-width: 960px;
+    --content-padding: 20px;
+}
+
+
+/* ============================================
+   ОБЩИЕ СТИЛИ
+   ============================================ */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--color-bg-body);
+    font-family: Tahoma, Arial, sans-serif;
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+
+/* ============================================
+   ШАПКА СТРАНИЦЫ (Лаба 9 — Параллакс)
+   ============================================ */
+.header {
+    background: var(--color-bg-header);
+    padding: var(--header-padding);
+    position: relative;
+    min-height: var(--header-min-height);
+    overflow: hidden;
+}
+
+/* Логотип */
+.header .logo {
+    display: block;
+    width: var(--logo-width);
+    margin: 0 auto var(--logo-margin-bottom);
+    position: relative;
+    z-index: 10;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.header .logo:hover {
+    transform: scale(1.06);
+}
+
+/* Текстовая область: заголовок + ссылки */
+.header-text-area {
+    float: left;
+    width: var(--text-area-width);
+    margin-top: var(--text-area-margin-top);
+    position: relative;
+    z-index: 10;
+}
+
+.service-title {
+    font-family: Georgia, serif;
+    font-size: var(--title-font-size);
+    color: var(--color-text);
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+}
+
+/* Ссылки "Регистрация" / "Вход" */
+/* === Кнопки в шапке (единый стиль для всех страниц) === */
+.register-link {
+    display: inline-block;
+    color: #fff;
+    text-decoration: none;
+    margin: 0 12px 10px 0;
+    padding: 10px 20px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s;
+    opacity: 0.9;
+}
+
+.register-link:hover {
+    background: #fff;
+    color: #1f3442;
+    opacity: 1;
+}
+
+/* Контейнер иконок параллакса */
+.icons-for-parallax {
+    float: right;
+    width: var(--icons-container-width);
+    height: var(--icons-container-height);
+    margin: var(--icons-container-margin);
+    position: relative;
+}
+
+/* Общие стили для иконок */
+.icons-for-parallax img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: top 0.1s linear;
+}
+
+/* Иконка 1: передний план */
+.icon-for-parallax-first {
+    width: var(--icon1-width);
+    margin-top: var(--icon1-top);
+    z-index: var(--icon1-zindex);
+}
+
+/* Иконка 2: средний план */
+.icon-for-parallax-second {
+    width: var(--icon2-width);
+    margin-top: var(--icon2-top);
+    margin-left: var(--icon2-left);
+    z-index: var(--icon2-zindex);
+}
+
+/* Иконка 3: задний план */
+.icon-for-parallax-third {
+    width: var(--icon3-width);
+    margin-left: var(--icon3-left);
+    z-index: var(--icon3-zindex);
+}
+
+/* Очистка флоатов в шапке */
+.header::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* ============================================
+   📄 КОНТЕНТ СТАТЬИ
+   ============================================ */
+.article-content,
+.archive-content {
+    width: var(--content-width);
+    max-width: 90%;
+    margin: 0 auto;
+    padding: var(--content-padding);
+    background: var(--color-bg-content);
+    color: var(--color-text-muted);
+}
+
+.article-content h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: var(--color-text);
+    margin-bottom: 10px;
+}
+
+/* Информация об авторе и дате */
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+/* Текст статьи */
+.article-text {
+    line-height: 1.8;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* Ссылка "Все записи" */
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: var(--color-text);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid var(--color-text);
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+/* ============================================
+  СПИСОК СТАТЕЙ (Архив)
+   ============================================ */
+.one-post {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.one-post:hover {
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.post-title a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 1.2em;
+    transition: text-decoration 0.2s;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+/* Кнопка сворачивания */
+.fold-button {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+    display: inline-block;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.fold-button:hover {
+    color: var(--color-text);
+}
+
+/* Скрытые элементы при сворачивании (Лаба 7) */
+.one-post.folded .article-author,
+.one-post.folded .article-created-date,
+.one-post.folded .article-text {
+    display: none;
+}
+
+.one-post.folded {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+/* Подсветка поста при наведении (Лаба 8) */
+.one-post-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+
+/* ============================================
+  ФОРМЫ (Вход / Регистрация / Создание поста)
+   ============================================ */
+.auth-content {
+    width: 400px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.auth-content h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Georgia, serif;
+    color: var(--color-text);
+}
+
+.auth-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-content input[type="text"],
+.auth-content input[type="email"],
+.auth-content input[type="password"],
+.auth-content textarea {
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Tahoma, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.auth-content input[type="text"]:focus,
+.auth-content input[type="email"]:focus,
+.auth-content input[type="password"]:focus,
+.auth-content textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+}
+
+.auth-content textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.auth-content input[type="submit"] {
+    padding: 14px;
+    background: var(--color-accent);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.auth-content input[type="submit"]:hover {
+    background: var(--color-bg-body);
+}
+
+.auth-content input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: var(--color-text);
+    text-decoration: none;
+    opacity: 0.9;
+    transition: opacity 0.2s;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.error {
+    color: var(--color-error);
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid var(--color-error);
+}

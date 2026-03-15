@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body>
+
+    <header class="header">
+        <img src="{% static 'images/logo.png' %}" alt="Логотип" class="logo" id="main-logo">
+
+        <div class="header-text-area">
+            <p class="service-title">Коллективный блог</p>
+
+            <a href="{% url 'articles:login' %}" class="register-link">Вход</a>
+        </div>
+
+        <div class="icons-for-parallax">
+            <img class="icon-for-parallax-first" src="{% static 'images/article-icon-for-parallax.png' %}" alt="" data-speed="0.15">
+            <img class="icon-for-parallax-second" src="{% static 'images/article-icon-for-parallax.png' %}" alt="" data-speed="0.10">
+            <img class="icon-for-parallax-third" src="{% static 'images/article-icon-for-parallax.png' %}" alt="" data-speed="0.05">
+        </div>
+    </header>
+
+
+    <main class="auth-content">
+        <h1>Регистрация</h1>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="password" name="password2" placeholder="Подтвердите пароль" required>
+            <input type="submit" value="Зарегистрироваться">
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,35 @@
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #333;
+}
+
+/* Задание: шрифт с засечками для h1 */
+h1 {
+    font-family: Georgia, serif;
+}
+
+/* Задание: шрифт 14px для h4 */
+h4 {
+    font-size: 14px;
+}
+
+/* Задание: таблица 100% ширины, без границ */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr td {
+    padding: 5px;
+    border: none;
+}
+
+p, h4 {
+    font-size: 22px;
+    margin-bottom: 0;
+}
+
+ul, ol {
+    margin: 0;
+}

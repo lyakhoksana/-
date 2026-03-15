@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Вход</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+
+<body>
+    <div class="header">
+        {% load static %}
+            <img src="{% static 'img/dpb-logo.png' %}" alt="Логотип">
+    </div>
+    <header class="header">
+        {% load static %}
+            <!--<img src="{% static 'images/logo.png' %}" alt="Логотип" class="logo"> -->
+
+        <div class="header-auth-links">
+            <a href="{% url 'articles:register' %}">Регистрация</a>
+        </div>
+    </header>
+
+    <main class="auth-content">
+        <h1>Вход в аккаунт</h1>
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
+        <form method="post">
+            {% csrf_token %}
+
+            <input type="text" name="username" placeholder="Имя пользователя" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+
+            <input type="submit" value="Войти">
+        </form>
+
+        <p class="auth-link">
+            Нет аккаунта? <a href="{% url 'articles:register' %}">Зарегистрироваться</a>
+        </p>
+    </main>
+</body>
+</html>

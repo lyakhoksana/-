@@ -1,0 +1,29 @@
+# Было:
+# from django.db import models
+# from django.contrib.auth.models import User
+# class Article(models.Model):
+#     author = models.ForeignKey(User)  # ⚠️ Нет on_delete!
+#     def __unicode__(self):  # ⚠️ Нет в Python 3!
+
+# Стало:
+from django.db import models
+from django.contrib.auth.models import User
+
+
+class Article(models.Model):
+    title = models.CharField(max_length=200)
+    # Критично: on_delete обязателен в Django 2.0+
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    text = models.TextField()
+    created_date = models.DateField(auto_now_add=True)
+
+    # Было: __unicode__ → Стало: __str__
+    def __str__(self):
+        return f"{self.author.username}:{self.title}"
+
+    def get_excerpt(self):
+        return self.text[:140] + "..." if len(self.text) > 140 else self.text
+
+    class Meta:
+        verbose_name = "Статья"
+        verbose_name_plural = "Статьи"

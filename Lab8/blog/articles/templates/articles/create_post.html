@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Написать статью</title>
+    <link rel="stylesheet" href="{% static 'css/article.css' %}">
+</head>
+<body>
+    <header class="header">
+            <img src="{% static 'images/dpb-logo.png' %}?v=2" alt="Логотип" class="logo" id="main-logo">
+        <div class="header">
+
+        </div>
+
+
+        <div class="header-auth-links">
+            {% if user.is_authenticated %}
+                <a href="{% url 'articles:logout' %}">Выйти ({{ user.username }})</a>
+            {% else %}
+                <a href="{% url 'articles:login' %}">Вход</a>
+                <a href="{% url 'articles:register' %}">Регистрация</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <main class="auth-content">
+        <h1>Написать статью</h1>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <input type="text" name="title" placeholder="Заголовок" value="{{ form.title|default:'' }}" required>
+            <textarea name="text" placeholder="Текст статьи" required>{{ form.text|default:'' }}</textarea>
+
+            {% if form.errors %}
+                <div class="error">{{ form.errors }}</div>
+            {% endif %}
+
+            <input type="submit" value="Опубликовать">
+        </form>
+
+        <p class="auth-link">
+            <a href="{% url 'articles:archive' %}">← На главную</a>
+        </p>
+    </main>
+</body>
+</html>

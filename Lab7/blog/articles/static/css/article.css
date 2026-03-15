@@ -1,0 +1,311 @@
+/* === Общие стили === */
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* === Шапка === */
+.header {
+    background: #16a085;
+    padding: 20px;
+    text-align: center;
+    position: relative;  /* ✅ Для position: absolute у ссылок авторизации */
+}
+
+.header img.logo {
+    display: block;
+    width: 318px;  /* ✅ По методичке (было 500px) */
+    margin: 0 auto;
+}
+
+/* === Ссылки авторизации в шапке (Лаба 6) === */
+.header-auth-links {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 20;
+}
+
+.header-auth-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+    padding: 8px 15px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    transition: all 0.3s;
+    opacity: 0.9;
+}
+
+.header-auth-links a:hover {
+    background: #fff;
+    color: #16a085;
+    opacity: 1;
+}
+
+/* === Контент статьи (Лаба 4) === */
+.article-content {
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-content h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* === Информация об авторе и дате === */
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+/* === Текст статьи === */
+.article-text {
+    line-height: 1.8;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* === Ссылка "Все записи" (Лаба 4) === */
+.back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* === Список статей (Лаба 3, 7, 8) === */
+.archive-content {  /* ✅ Было .archive .archive — неправильно */
+    width: 960px;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.one-post {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.post-title a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.post-title a:hover {
+    text-decoration: underline;
+}
+
+.fold-button {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.fold-button:hover {
+    color: #fff;
+}
+
+/* === Подсветка поста (Лаба 8) === */
+.one-post-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0;
+    z-index: -1;
+    border-radius: 4px;
+}
+
+/* === Формы авторизации и создания поста (Лаба 5, 6) === */
+.auth-content {
+    width: 400px;
+    max-width: 90%;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.auth-content h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: Georgia, serif;
+}
+
+.auth-content form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.auth-content input[type="text"],
+.auth-content input[type="email"],
+.auth-content input[type="password"],
+.auth-content textarea {
+    padding: 12px 15px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: Tahoma, Arial, sans-serif;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.auth-content input[type="text"]:focus,
+.auth-content input[type="email"]:focus,
+.auth-content input[type="password"]:focus,
+.auth-content textarea:focus {
+    outline: none;
+    border-color: #1abc9c;
+    box-shadow: 0 0 0 3px rgba(26, 188, 156, 0.2);
+}
+
+.auth-content textarea {
+    min-height: 200px;
+    resize: vertical;
+}
+
+.auth-content input[type="submit"] {
+    padding: 14px;
+    background: #16a085;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    margin-top: 10px;
+}
+
+.auth-content input[type="submit"]:hover {
+    background: #1abc9c;
+}
+
+.auth-content input[type="submit"]:active {
+    transform: scale(0.98);
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.auth-link a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.auth-link a:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+.error {
+    color: #e74c3c;
+    text-align: center;
+    margin-top: 15px;
+    padding: 10px;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 4px;
+    border-left: 3px solid #e74c3c;
+}
+
+/* === Адаптивность для мобильных (Лаба 6) === */
+@media (max-width: 768px) {
+    .auth-content {
+        width: 95%;
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    .header-auth-links {
+        position: static;
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .header-auth-links a {
+        display: inline-block;
+        margin: 5px;
+    }
+
+    .archive-content,
+    .article-content {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .header img.logo {
+        width: 200px;
+    }
+}
+
+.one-post.folded .article-author,
+.one-post.folded .article-created-date,
+.one-post.folded .article-text {
+    display: none;
+}
+
+/* Опционально: стиль для кнопки в свёрнутом состоянии */
+.fold-button {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+    display: inline-block;
+    user-select: none;
+    transition: color 0.2s;
+}
+
+.fold-button:hover {
+    color: #fff;
+}
+
+/* Анимация сворачивания (опционально) */
+.one-post.folded {
+    background: rgba(0, 0, 0, 0.2);
+}

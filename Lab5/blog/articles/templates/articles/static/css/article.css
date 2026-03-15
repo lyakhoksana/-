@@ -1,0 +1,112 @@
+/* Общие стили */
+body {
+    background: #1abc9c;
+    font-family: Tahoma, Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Шапка */
+.header {
+    background: #16a085;
+    padding: 20px;
+    text-align: center;
+}
+
+.header img.logo {
+    display: block;
+    width: 500px;
+    margin: 0 auto;
+}
+
+/* Контент статьи */
+.article-content {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.article-content h1 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+/* Информация об авторе и дате */
+.article-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.article-author {
+    width: 50%;
+    float: left;
+}
+
+.article-created-date {
+    text-align: right;
+}
+
+/* Текст статьи */
+.article-text {
+    line-height: 1.8;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+/* Ссылка "Все записи" */
+.article .back-link {
+    display: inline-block;
+    margin-top: 30px;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 2px solid #fff;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Стили для списка статей (из лабы 3) */
+.archive .archive {
+    width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.archive .one-post {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 4px;
+    position: relative;
+}
+
+.archive .post-title a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.archive .post-title a:hover {
+    text-decoration: underline;
+}
+
+.archive .fold-button {
+    cursor: pointer;
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.archive .fold-button:hover {
+    color: #ccc;
+}
